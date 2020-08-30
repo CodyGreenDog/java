@@ -29,8 +29,8 @@ public class HomeworkApp {
         float c = 45.f;
         float d = 437.78f;
 
-        float exThreeResult = exerciseThree( a, b, c, d);
-        System.out.println("Результат задания № 3 равен " + exThreeResult);
+        float calculationsResult = performCalculations( a, b, c, d);
+        System.out.println("Результат задания № 3 равен " + calculationsResult);
 
         /*
         * Задание 4
@@ -40,8 +40,8 @@ public class HomeworkApp {
         float number1 = 8.5f;
         float number2 = 5.6f;
 
-        boolean exFourResult = exerciseFour( number1, number2 );
-        System.out.println("Результат выполнения задания №4 равен " + exFourResult);
+        boolean flagInside = isInsideTheInterval( number1, number2 );
+        System.out.println("Результат выполнения задания №4 равен " + flagInside);
 
         /*
         * Задание 5
@@ -49,22 +49,22 @@ public class HomeworkApp {
         */
         int number = -8;
         System.out.print("Результат выполнения задания №5: ");
-        numberSign(number);
+        printNumberSign(number);
 
         /*
         * Задание 6
         * Если в метод передано положительное число, возвращается true, иначе false
         */
         number = 7;
-        boolean exResultSix = isPositive(number);
-        System.out.println("Результат выполнения задания № 6 равен " + exResultSix);
+        boolean flagPositive = isPositive(number);
+        System.out.println("Результат выполнения задания № 6 равен " + flagPositive);
 
         /*
         * Задание 7
         * Метод принимает строку и выводит сообщение "Привет, [аргумент]"
         */
-        helloAnyone("Антон");
-        helloAnyone("Юзер");
+        greetAnyone("Антон");
+        greetAnyone("Юзер");
 
         /*
         * Задание 8
@@ -78,13 +78,13 @@ public class HomeworkApp {
     }
 
     //Задание 3
-    static float exerciseThree(float a, float b, float c, float d)
+    static float performCalculations(float a, float b, float c, float d)
     {
         return a * ( b + (c/d) );
     }
 
     //Задание 4
-    static boolean exerciseFour(float number1, float number2)
+    static boolean isInsideTheInterval(float number1, float number2)
     {
         boolean result = false;
         float sum = number1 + number2;
@@ -99,16 +99,10 @@ public class HomeworkApp {
     }
 
     //Задание 5
-    static void numberSign( int number )
+    static void printNumberSign( int number )
     {
-        if(number >= 0)
-        {
-            System.out.println("Число " + number + " положительное");
-        }
-        else
-        {
-            System.out.println("Число " + number + " отрицательное");
-        }
+        String sign = number >= 0 ? " положительное" : " отрицательное";
+        System.out.println("Число " + number + sign);
     }
 
     //Задание 6
@@ -128,7 +122,7 @@ public class HomeworkApp {
     }
 
     //Задание 7
-    static void helloAnyone(String name)
+    static void greetAnyone(String name)
     {
         System.out.println("Привет, " + name);
     }
