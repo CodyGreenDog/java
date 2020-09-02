@@ -128,16 +128,6 @@ public class HomeworkApp {
 
     //Exercise 4
     //===================================================================
-    static void fillArray1d(int[] arr, int rowNum, int size)
-    {
-        for(int i = 0; i < size; i++)
-        {
-            if(i == rowNum ||  size - 1 - rowNum == i)
-            {
-                arr[i] = 1;
-            }
-        }
-    }
     static void fillDiagElementsWith1(int[][] arr)
     {
         int j_size = arr.length;
@@ -145,7 +135,7 @@ public class HomeworkApp {
         for(int j = 0; j < j_size; j++)
         {
             int i_size = arr[j].length;
-            fillArray1d(arr[j], j, i_size);
+            arr[j][j] = arr[j][ i_size - 1 - j ] = 1;
         }
 
     }
